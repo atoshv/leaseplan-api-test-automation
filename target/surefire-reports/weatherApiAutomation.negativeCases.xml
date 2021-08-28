@@ -1,0 +1,297 @@
+<testsuite failures="0" name="weatherApiAutomation/negativeCases.feature" skipped="0" tests="5" time="3.63256">
+  <testcase classname="weatherApiAutomation.negativeCases" name="Invoking &quot;Current Weather&quot; API by providing invalid / wrong location name" time="1.628915">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = '@@##$!' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 615 ...................................... passed
+And match response.error.type == 'request_failed' ......................... passed
+And match response.error.info == 'Your API request failed. Please try again or contact support.' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.negativeCases" name="Invoking &quot;Current Weather&quot; API by providing Invalid access key and Verify the response" time="0.510944">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = '@@##$!' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 615 ...................................... passed
+And match response.error.type == 'request_failed' ......................... passed
+And match response.error.info == 'Your API request failed. Please try again or contact support.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '1234' ............................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'invalid_access_key' ..................... passed
+And match response.error.info == 'You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.negativeCases" name="Invoking &quot;Current Weather&quot; API by providing blank / null value for access key and Verify the response" time="0.504363">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = '@@##$!' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 615 ...................................... passed
+And match response.error.type == 'request_failed' ......................... passed
+And match response.error.info == 'Your API request failed. Please try again or contact support.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '1234' ............................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'invalid_access_key' ..................... passed
+And match response.error.info == 'You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '' ................................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'missing_access_key' ..................... passed
+And match response.error.info == 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.negativeCases" name="Invoking &quot;Current Weather&quot; API by providing wrong query param name for access key and Verify the response" time="0.495125">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = '@@##$!' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 615 ...................................... passed
+And match response.error.type == 'request_failed' ......................... passed
+And match response.error.info == 'Your API request failed. Please try again or contact support.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '1234' ............................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'invalid_access_key' ..................... passed
+And match response.error.info == 'You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '' ................................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'missing_access_key' ..................... passed
+And match response.error.info == 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_Atosh = access_key ....................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'missing_access_key' ..................... passed
+And match response.error.info == 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.negativeCases" name="Invoking &quot;Current Weather&quot; API by providing wrong query param name for access key and Verify the response" time="0.493214">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = '@@##$!' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 615 ...................................... passed
+And match response.error.type == 'request_failed' ......................... passed
+And match response.error.info == 'Your API request failed. Please try again or contact support.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '1234' ............................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'invalid_access_key' ..................... passed
+And match response.error.info == 'You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = '' ................................................. passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'missing_access_key' ..................... passed
+And match response.error.info == 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_Atosh = access_key ....................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 101 ...................................... passed
+And match response.error.type == 'missing_access_key' ..................... passed
+And match response.error.info == 'You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = '' ...................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 601 ...................................... passed
+And match response.error.type == 'missing_query' .......................... passed
+And match response.error.info == 'Please specify a valid location identifier using the query parameter.' . passed</system-out>
+  </testcase>
+</testsuite>

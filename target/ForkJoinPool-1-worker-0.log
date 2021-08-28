@@ -1,0 +1,351 @@
+00:21:00.102 karate.env system property was: TEST 
+00:21:00.946 request:
+1 > GET http://api.weatherstack.com/current?access_key=75954876168d81ceb685be99a415e565&query=New+York
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: api.weatherstack.com
+1 > User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:01.619 response time in milliseconds: 673.84
+1 < 200
+1 < Alt-Svc: h3=":443"; ma=86400
+1 < CF-Cache-Status: DYNAMIC
+1 < CF-RAY: 68577d257d9e1da5-BLR
+1 < Connection: keep-alive
+1 < Content-Type: application/json; Charset=UTF-8
+1 < Date: Fri, 27 Aug 2021 18:51:01 GMT
+1 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=5bLUDGPAMGUHd%2BdQMrZps6dVVmpHQGRaXYKbf2uQK9fECfTqx%2Fom5aQZq8VvkB3tfX5OVTcwdE9b2T6pqceZNQ8PtzNe5ND1rSXCcxLUcAJBTKJ79ayZNn%2FrMgrMSVOX2G7PfUyoxA%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 < Server: cloudflare
+1 < Transfer-Encoding: chunked
+1 < access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 < access-control-allow-origin: *
+1 < x-apilayer-transaction-id: 154b4c73-0a87-4802-89bb-9c7535b28c52
+1 < x-request-time: 0.013
+{
+  "request": {
+    "type": "City",
+    "query": "New York, United States of America",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "New York",
+    "country": "United States of America",
+    "region": "New York",
+    "lat": "40.714",
+    "lon": "-74.006",
+    "timezone_id": "America/New_York",
+    "localtime": "2021-08-27 14:47",
+    "localtime_epoch": 1630075620,
+    "utc_offset": "-4.0"
+  },
+  "current": {
+    "observation_time": "06:47 PM",
+    "temperature": 33,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "wind_speed": 0,
+    "wind_degree": 345,
+    "wind_dir": "NNW",
+    "pressure": 1019,
+    "precip": 0,
+    "humidity": 54,
+    "cloudcover": 0,
+    "feelslike": 36,
+    "uv_index": 8,
+    "visibility": 16,
+    "is_day": "yes"
+  }
+}
+
+
+00:21:01.619 [print] Response is:  {
+  "request": {
+    "unit": "m",
+    "query": "New York, United States of America",
+    "language": "en",
+    "type": "City"
+  },
+  "current": {
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "observation_time": "06:47 PM",
+    "wind_degree": 345,
+    "visibility": 16,
+    "weather_icons": [
+      "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "feelslike": 36,
+    "is_day": "yes",
+    "wind_dir": "NNW",
+    "pressure": 1019,
+    "cloudcover": 0,
+    "precip": 0,
+    "uv_index": 8,
+    "temperature": 33,
+    "humidity": 54,
+    "wind_speed": 0,
+    "weather_code": 113
+  },
+  "location": {
+    "localtime": "2021-08-27 14:47",
+    "utc_offset": "-4.0",
+    "country": "United States of America",
+    "localtime_epoch": 1630075620,
+    "name": "New York",
+    "timezone_id": "America/New_York",
+    "lon": "-74.006",
+    "region": "New York",
+    "lat": "40.714"
+  }
+}
+
+00:21:02.090 [print] true
+00:21:02.090 [print] Response is:  {
+  "localtime": "2021-08-27 14:47",
+  "utc_offset": "-4.0",
+  "country": "United States of America",
+  "localtime_epoch": 1630075620,
+  "name": "New York",
+  "timezone_id": "America/New_York",
+  "lon": "-74.006",
+  "region": "New York",
+  "lat": "40.714"
+}
+
+00:21:02.106 [print] Response is:  [
+  "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+]
+
+00:21:02.106 [print] Response is:  [
+  "Sunny"
+]
+
+00:21:02.106 karate.env system property was: TEST 
+00:21:02.122 request:
+1 > GET http://api.weatherstack.com/historical?access_key=75954876168d81ceb685be99a415e565&query=New+York&historical_date_start=2015-01-21&historical_date_end=2015-01-25
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: api.weatherstack.com
+1 > User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:02.606 response time in milliseconds: 485.07
+1 < 200
+1 < Alt-Svc: h3=":443"; ma=86400
+1 < CF-Cache-Status: DYNAMIC
+1 < CF-RAY: 68577d2bbba41da1-BLR
+1 < Connection: keep-alive
+1 < Content-Type: application/json; Charset=UTF-8
+1 < Date: Fri, 27 Aug 2021 18:51:02 GMT
+1 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=WzDDQaZ1gj6JQmeNSVHEddlYfJdy6%2FrpYHyfb99vPWqTbdbilr%2Bdmkcgp%2FfLaUrlqM807JMFZjj1B3mwlgfzVCouZyuazTmlIJ9D9E1QakpmgxHexSZspbjQFFGl1GMKioWLuFm4PQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 < Server: cloudflare
+1 < Transfer-Encoding: chunked
+1 < access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 < access-control-allow-origin: *
+1 < x-apilayer-transaction-id: 69565a8e-a358-4cbd-a8b3-1b7a73955510
+1 < x-request-time: 0.008
+{
+  "success": false,
+  "error": {
+    "code": 603,
+    "type": "historical_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature."
+  }
+}
+
+
+00:21:02.606 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 603,
+    "type": "historical_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature."
+  }
+}
+
+00:21:02.622 karate.env system property was: TEST 
+00:21:02.622 request:
+1 > GET http://api.weatherstack.com/autocomplete?access_key=75954876168d81ceb685be99a415e565&query=london
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: api.weatherstack.com
+1 > User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:03.124 response time in milliseconds: 494.17
+1 < 200
+1 < Alt-Svc: h3=":443"; ma=86400
+1 < CF-Cache-Status: DYNAMIC
+1 < CF-RAY: 68577d2eee5f1e08-BLR
+1 < Connection: keep-alive
+1 < Content-Type: application/json; Charset=UTF-8
+1 < Date: Fri, 27 Aug 2021 18:51:03 GMT
+1 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kEWyJpEK5zeEQo%2BsTLM%2FU%2FoWBe5FN%2BXLReFY2qfj8sp833CyE46N%2FkZkFok0xY2nmy0jz7clAMqL7E2Lyf3sIk7zY%2FKzJGF42eaZ1mcQC7xj8Uw%2F8U%2F62izl%2B6dbVMQZzx4NYyblrQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 < Server: cloudflare
+1 < Transfer-Encoding: chunked
+1 < access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 < access-control-allow-origin: *
+1 < x-apilayer-transaction-id: b90701b0-14d7-4307-814c-81b110ad0a29
+1 < x-request-time: 0.009
+{
+  "success": false,
+  "error": {
+    "code": 105,
+    "type": "function_access_restricted",
+    "info": "Access Restricted - Your current Subscription Plan does not support this API Function."
+  }
+}
+
+
+00:21:03.125 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 105,
+    "type": "function_access_restricted",
+    "info": "Access Restricted - Your current Subscription Plan does not support this API Function."
+  }
+}
+
+00:21:03.131 karate.env system property was: TEST 
+00:21:03.136 request:
+1 > GET http://api.weatherstack.com/current?access_key=75954876168d81ceb685be99a415e565&query=London%3BSingapur%3BShanghai
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: api.weatherstack.com
+1 > User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:03.637 response time in milliseconds: 499.10
+1 < 200
+1 < Alt-Svc: h3=":443"; ma=86400
+1 < CF-Cache-Status: DYNAMIC
+1 < CF-RAY: 68577d320e4b1d2d-BLR
+1 < Connection: keep-alive
+1 < Content-Type: application/json; Charset=UTF-8
+1 < Date: Fri, 27 Aug 2021 18:51:03 GMT
+1 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=gPbTm2l93mQ5AbZpl6wBzT5kBrm4MJJ6zU7QN%2FrTocjzpnG65PQfPoKfqtvPyy4SKHKh%2F%2FqbdoYQU4mQ4j8iyth1SL9eG32UOO%2B4h3DcUd%2BKojFjKD1iMAjwOmeCpHw4IfTWYBe42A%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 < Server: cloudflare
+1 < Transfer-Encoding: chunked
+1 < access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 < access-control-allow-origin: *
+1 < x-apilayer-transaction-id: b3f4e86c-3974-48a2-859a-ee0fc545e5f2
+1 < x-request-time: 0.007
+{
+  "success": false,
+  "error": {
+    "code": 604,
+    "type": "bulk_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support bulk queries. Please upgrade your account to use this feature."
+  }
+}
+
+
+00:21:03.638 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 604,
+    "type": "bulk_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support bulk queries. Please upgrade your account to use this feature."
+  }
+}
+
+00:21:03.651 karate.env system property was: TEST 
+00:21:03.659 request:
+1 > GET http://api.weatherstack.com/current?access_key=&query=New+York
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: api.weatherstack.com
+1 > User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:04.139 response time in milliseconds: 492.77
+1 < 200
+1 < Alt-Svc: h3=":443"; ma=86400
+1 < CF-Cache-Status: DYNAMIC
+1 < CF-RAY: 68577d35584e1d9d-BLR
+1 < Connection: keep-alive
+1 < Content-Type: application/json; Charset=UTF-8
+1 < Date: Fri, 27 Aug 2021 18:51:04 GMT
+1 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=7tkQYDWSMk3dQ3jDPx8AbYan0f%2F%2BNlVIGZeFxB70HRWpnZdsCXRP3LXqgJBLwpHiim9FPrtmdOnFuYtFKesnoWWFORHLkFyPjs154QfiWK8EC251fC3pNTgvg5BX8e9Y9e7%2BxJav9g%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 < Server: cloudflare
+1 < Transfer-Encoding: chunked
+1 < access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 < access-control-allow-origin: *
+1 < cache-control: no-cache
+1 < x-blocked-at-loadbalancer: 1
+{
+  "success": false,
+  "error": {
+    "code": 101,
+    "type": "missing_access_key",
+    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+  }
+}
+
+
+00:21:04.139 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 101,
+    "type": "missing_access_key",
+    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+  }
+}
+
+00:21:04.155 karate.env system property was: TEST 
+00:21:04.155 request:
+1 > GET http://api.weatherstack.com/current?access_key=75954876168d81ceb685be99a415e565&query=
+1 > Accept: application/json
+1 > Accept-Encoding: gzip,deflate
+1 > Connection: Keep-Alive
+1 > Host: api.weatherstack.com
+1 > User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:04.640 response time in milliseconds: 484.57
+1 < 200
+1 < Alt-Svc: h3=":443"; ma=86400
+1 < CF-Cache-Status: DYNAMIC
+1 < CF-RAY: 68577d387bfc26bd-BLR
+1 < Connection: keep-alive
+1 < Content-Type: application/json; Charset=UTF-8
+1 < Date: Fri, 27 Aug 2021 18:51:04 GMT
+1 < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=IyOHRqurxDwgArdaJ2O8PdEL7i5PzxFrD6FuKRuUOAhXGdThgGPR4boVk1aavvIoGNUkNUKCuQhGEMuKaViCwLnHoeHVYAPI17AvXDiV%2F%2FnWpKoRXMxzovJQBDyDHDsaUTx%2BN6eFng%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 < Server: cloudflare
+1 < Transfer-Encoding: chunked
+1 < access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 < access-control-allow-origin: *
+1 < x-apilayer-transaction-id: 606754a7-bf9e-4d61-9008-16d11c785201
+1 < x-request-time: 0.010
+{
+  "success": false,
+  "error": {
+    "code": 601,
+    "type": "missing_query",
+    "info": "Please specify a valid location identifier using the query parameter."
+  }
+}
+
+
+00:21:04.640 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 601,
+    "type": "missing_query",
+    "info": "Please specify a valid location identifier using the query parameter."
+  }
+}
+

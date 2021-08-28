@@ -1,0 +1,677 @@
+<testsuite failures="0" name="weatherApiAutomation/positiveCases.feature" skipped="0" tests="7" time="5.195036">
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Current Weather&quot; API and Verify the response schema &amp; few parameters from json response" time="1.918172">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Historical Weather&quot; API and Verify error info from the json response" time="0.544419">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date = '2015-01-21' .................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Historical Time-Series&quot; API and Verify error info from the json response" time="0.493459">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date = '2015-01-21' .................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date_start = '2015-01-21' ............................ passed
+And param historical_date_end = '2015-01-25' .............................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Weather Forecast&quot; API and Verify error info from the json response" time="0.522399">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date = '2015-01-21' .................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date_start = '2015-01-21' ............................ passed
+And param historical_date_end = '2015-01-25' .............................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path weatherForecast .................................................. passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param forecast_days = '1' ............................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.error.code == 609 ...................................... passed
+And match response.error.type == 'forecast_days_not_supported_on_plan' .... passed
+And match response.error.info == 'Your current subscription plan does not support weather forecast data. Please upgrade your account to use this feature.' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Location Lookup/Autocomplete&quot; API and Verify error info from json response" time="0.500856">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date = '2015-01-21' .................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date_start = '2015-01-21' ............................ passed
+And param historical_date_end = '2015-01-25' .............................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path weatherForecast .................................................. passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param forecast_days = '1' ............................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.error.code == 609 ...................................... passed
+And match response.error.type == 'forecast_days_not_supported_on_plan' .... passed
+And match response.error.info == 'Your current subscription plan does not support weather forecast data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path locationLookup ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'london' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.info == 'Access Restricted - Your current Subscription Plan does not support this API Function.' . passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Single Location&quot; API and Verify weather_descriptions info shouldn't be null value" time="0.70565">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date = '2015-01-21' .................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date_start = '2015-01-21' ............................ passed
+And param historical_date_end = '2015-01-25' .............................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path weatherForecast .................................................. passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param forecast_days = '1' ............................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.error.code == 609 ...................................... passed
+And match response.error.type == 'forecast_days_not_supported_on_plan' .... passed
+And match response.error.info == 'Your current subscription plan does not support weather forecast data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path locationLookup ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'london' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.info == 'Access Restricted - Your current Subscription Plan does not support this API Function.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'London, United Kingdom' ................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed</system-out>
+  </testcase>
+  <testcase classname="weatherApiAutomation.positiveCases" name="Invoking &quot;Multiple Locations&quot; API and Verify the error info from the json response" time="0.510081">
+    <system-out>* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+Then match response == '#object' .......................................... passed
+* string expectedOutput = read("jsonCurrentWeather.json") ................. passed
+* string jsonData = response .............................................. passed
+* def SchemaUtils = Java.type('utils.SchemaUtils') ........................ passed
+* assert SchemaUtils.isValid(jsonData, expectedOutput) .................... passed
+* print SchemaUtils.isValid(jsonData, expectedOutput) ..................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+And match response.location.name == 'New York' ............................ passed
+And match response.location.country == 'United States of America' ......... passed
+And match response.location.timezone_id == 'America/New_York' ............. passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date = '2015-01-21' .................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path historicalWeather ................................................ passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param historical_date_start = '2015-01-21' ............................ passed
+And param historical_date_end = '2015-01-25' .............................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 603 ...................................... passed
+And match response.error.type == 'historical_queries_not_supported_on_plan' . passed
+And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path weatherForecast .................................................. passed
+And param access_key = access_key ......................................... passed
+And param query = 'New York' .............................................. passed
+And param forecast_days = '1' ............................................. passed
+And param hourly = '1' .................................................... passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+And match response.error.code == 609 ...................................... passed
+And match response.error.type == 'forecast_days_not_supported_on_plan' .... passed
+And match response.error.info == 'Your current subscription plan does not support weather forecast data. Please upgrade your account to use this feature.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path locationLookup ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'london' ................................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.info == 'Access Restricted - Your current Subscription Plan does not support this API Function.' . passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'London, United Kingdom' ................................ passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def location = response.location ........................................ passed
+* print 'Response is: ', location ......................................... passed
+* def weatherIcons = response.current.weather_icons ....................... passed
+* print 'Response is: ', weatherIcons ..................................... passed
+* def weatherDesc = response.current.weather_descriptions ................. passed
+* print 'Response is: ', weatherDesc ...................................... passed
+And match response.current.weather_icons != null .......................... passed
+And match response.current.weather_descriptions != null ................... passed
+And match response.location != null ....................................... passed
+* configure logPrettyResponse = true ...................................... passed
+* configure logPrettyRequest = true ....................................... passed
+* configure ssl = true .................................................... passed
+* def currentWeather = '/current' ......................................... passed
+* def historicalWeather = '/historical' ................................... passed
+* def weatherForecast = '/forecast' ....................................... passed
+* def locationLookup = '/autocomplete' .................................... passed
+Given url WeatherURL ...................................................... passed
+And path currentWeather ................................................... passed
+And param access_key = access_key ......................................... passed
+And param query = 'London;Singapur;Shanghai' .............................. passed
+And header Accept = 'application/json' .................................... passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed
+* def res = response ...................................................... passed
+* print 'Response is: ', res .............................................. passed
+And match response.error.code == 604 ...................................... passed
+And match response.error.type == 'bulk_queries_not_supported_on_plan' ..... passed
+And match response.error.info == 'Your current subscription plan does not support bulk queries. Please upgrade your account to use this feature.' . passed</system-out>
+  </testcase>
+</testsuite>

@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "unit": {
+          "type": "string"
+        },
+        "query": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "unit",
+        "query",
+        "language",
+        "type"
+      ]
+    },
+    "current": {
+      "type": "object",
+      "properties": {
+        "weather_descriptions": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "observation_time": {
+          "type": "string"
+        },
+        "wind_degree": {
+          "type": "integer"
+        },
+        "visibility": {
+          "type": "integer"
+        },
+        "weather_icons": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "feelslike": {
+          "type": "integer"
+        },
+        "is_day": {
+          "type": "string"
+        },
+        "wind_dir": {
+          "type": "string"
+        },
+        "pressure": {
+          "type": "integer"
+        },
+        "cloudcover": {
+          "type": "integer"
+        },
+        "precip": {
+          "type": "integer"
+        },
+        "uv_index": {
+          "type": "integer"
+        },
+        "temperature": {
+          "type": "integer"
+        },
+        "humidity": {
+          "type": "integer"
+        },
+        "wind_speed": {
+          "type": "integer"
+        },
+        "weather_code": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "weather_descriptions",
+        "observation_time",
+        "wind_degree",
+        "visibility",
+        "weather_icons",
+        "feelslike",
+        "is_day",
+        "wind_dir",
+        "pressure",
+        "cloudcover",
+        "precip",
+        "uv_index",
+        "temperature",
+        "humidity",
+        "wind_speed",
+        "weather_code"
+      ]
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "localtime": {
+          "type": "string"
+        },
+        "utc_offset": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "localtime_epoch": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "timezone_id": {
+          "type": "string"
+        },
+        "lon": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "localtime",
+        "utc_offset",
+        "country",
+        "localtime_epoch",
+        "name",
+        "timezone_id",
+        "lon",
+        "region",
+        "lat"
+      ]
+    }
+  },
+  "required": [
+    "request",
+    "current",
+    "location"
+  ]
+}

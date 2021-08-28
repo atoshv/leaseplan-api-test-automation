@@ -1,0 +1,11 @@
+image: qbarlas/karate-dsl:latest
+
+build:
+  stage: build
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  script:
+    - mvn clean test

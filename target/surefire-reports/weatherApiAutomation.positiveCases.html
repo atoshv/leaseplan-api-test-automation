@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta charset="utf-8">
+    
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    
+<link href="res/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+<link href="res/karate-report.css" rel="stylesheet" type="text/css">
+    
+<link href="favicon.ico" rel="shortcut icon">
+    
+<script src="res/jquery.min.js" type="text/javascript"></script>
+    <script src="res/jquery.tablesorter.min.js" type="text/javascript"></script>
+    <script src="res/bootstrap.min.js" type="text/javascript"></script>
+    <script src="res/karate-report.js" type="text/javascript"></script>
+    
+<title>weatherApiAutomation.positiveCases</title>
+  
+</head>
+  
+<body>
+    
+<div id="root-container">
+      
+<div id="leftnav">
+        
+<div class="nav-logo">
+          
+<a href="karate-summary.html">
+            <img alt="Karate" src="res/karate-logo.svg">
+          </a>
+          
+<div class="nav-count">
+            
+<div class="bg-success" id="nav-pass">7</div>
+            
+<div class="bg-danger" id="nav-fail">0</div>
+          
+</div>
+        
+</div>
+        
+<div id="nav-type">Scenarios</div>         
+        
+<div id="nav-date">2021-08-28 12:21:04 AM</div>        
+      
+<div class="nav-container">
+<div class="nav-item passed">
+<a href="#[1:21]">[1:21] Invoking "Current Weather" API and Verify the response schema &amp; few parameters from json response </a>
+</div>
+<div class="nav-item passed">
+<a href="#[2:56]">[2:56] Invoking "Historical Weather" API and Verify error info from the json response </a>
+</div>
+<div class="nav-item passed">
+<a href="#[3:76]">[3:76] Invoking "Historical Time-Series" API and Verify error info from the json response </a>
+</div>
+<div class="nav-item passed">
+<a href="#[4:97]">[4:97] Invoking "Weather Forecast" API and Verify error info from the json response </a>
+</div>
+<div class="nav-item passed">
+<a href="#[5:116]">[5:116] Invoking "Location Lookup/Autocomplete" API and Verify error info from json response </a>
+</div>
+<div class="nav-item passed">
+<a href="#[6:132]">[6:132] Invoking "Single Location" API and Verify weather_descriptions info shouldn't be null value </a>
+</div>
+<div class="nav-item passed">
+<a href="#[7:154]">[7:154] Invoking "Multiple Locations" API and Verify the error info from the json response </a>
+</div>
+</div>
+</div>
+      
+<div id="content">
+      
+<div class="page-heading alert alert-primary">
+<a href="karate-summary.html">Summary</a><span class="feature-label">|</span><a href="karate-tags.html">Tags</a><span class="feature-label">|</span><span class="feature-label">Feature:</span><span class="feature-name">weatherApiAutomation/positiveCases.feature</span><span class="feature-description">Positive test cases for Weather APIs</span>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[1:21]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [1:21]</span><span class="scenario-name">Invoking "Current Weather" API and Verify the response schema &amp; few parameters from json response </span>
+</div>
+<div class="scenario-time passed">ms: 1918</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[1:21]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="1">
+<div class="step-ref bg-step">1</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="preformatted" data-parent="1">00:21:00.102 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="2">
+<div class="step-ref bg-step">2</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="3">
+<div class="step-ref bg-step">3</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">669</div>
+</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="4">
+<div class="step-ref bg-step">4</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="5">
+<div class="step-ref bg-step">5</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="6">
+<div class="step-ref bg-step">6</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row" data-parent="[1:21]bg">
+<div class="step-container" id="7">
+<div class="step-ref bg-step">7</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="8">
+<div class="step-ref passed">8</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="9">
+<div class="step-ref passed">9</div>
+<div class="step-cell passed">And path currentWeather</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="10">
+<div class="step-ref passed">10</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="11">
+<div class="step-ref passed">11</div>
+<div class="step-cell passed">And param query = 'New York'</div>
+</div>
+<div class="time-cell passed">4</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="12">
+<div class="step-ref passed">12</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="13">
+<div class="step-ref passed">13</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">751</div>
+</div>
+<div class="preformatted" data-parent="13">00:21:00.946 request:
+1 &gt; GET http://api.weatherstack.com/current?access_key=75954876168d81ceb685be99a415e565&amp;query=New+York
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:01.619 response time in milliseconds: 673.84
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d257d9e1da5-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:01 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=5bLUDGPAMGUHd%2BdQMrZps6dVVmpHQGRaXYKbf2uQK9fECfTqx%2Fom5aQZq8VvkB3tfX5OVTcwdE9b2T6pqceZNQ8PtzNe5ND1rSXCcxLUcAJBTKJ79ayZNn%2FrMgrMSVOX2G7PfUyoxA%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: 154b4c73-0a87-4802-89bb-9c7535b28c52
+1 &lt; x-request-time: 0.013
+{
+  "request": {
+    "type": "City",
+    "query": "New York, United States of America",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "New York",
+    "country": "United States of America",
+    "region": "New York",
+    "lat": "40.714",
+    "lon": "-74.006",
+    "timezone_id": "America/New_York",
+    "localtime": "2021-08-27 14:47",
+    "localtime_epoch": 1630075620,
+    "utc_offset": "-4.0"
+  },
+  "current": {
+    "observation_time": "06:47 PM",
+    "temperature": 33,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "wind_speed": 0,
+    "wind_degree": 345,
+    "wind_dir": "NNW",
+    "pressure": 1019,
+    "precip": 0,
+    "humidity": 54,
+    "cloudcover": 0,
+    "feelslike": 36,
+    "uv_index": 8,
+    "visibility": 16,
+    "is_day": "yes"
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="14">
+<div class="step-ref passed">14</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="15">
+<div class="step-ref passed">15</div>
+<div class="step-cell passed">* def res = response</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="16">
+<div class="step-ref passed">16</div>
+<div class="step-cell passed">* print 'Response is: ', res</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="preformatted" data-parent="16">00:21:01.619 [print] Response is:  {
+  "request": {
+    "unit": "m",
+    "query": "New York, United States of America",
+    "language": "en",
+    "type": "City"
+  },
+  "current": {
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "observation_time": "06:47 PM",
+    "wind_degree": 345,
+    "visibility": 16,
+    "weather_icons": [
+      "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "feelslike": 36,
+    "is_day": "yes",
+    "wind_dir": "NNW",
+    "pressure": 1019,
+    "cloudcover": 0,
+    "precip": 0,
+    "uv_index": 8,
+    "temperature": 33,
+    "humidity": 54,
+    "wind_speed": 0,
+    "weather_code": 113
+  },
+  "location": {
+    "localtime": "2021-08-27 14:47",
+    "utc_offset": "-4.0",
+    "country": "United States of America",
+    "localtime_epoch": 1630075620,
+    "name": "New York",
+    "timezone_id": "America/New_York",
+    "lon": "-74.006",
+    "region": "New York",
+    "lat": "40.714"
+  }
+}</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## Verifying response schema</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="17">
+<div class="step-ref passed">17</div>
+<div class="step-cell passed">Then match response == '#object'</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="18">
+<div class="step-ref passed">18</div>
+<div class="step-cell passed">* string expectedOutput = read("jsonCurrentWeather.json")</div>
+</div>
+<div class="time-cell passed">4</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="19">
+<div class="step-ref passed">19</div>
+<div class="step-cell passed">* string jsonData = response</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="20">
+<div class="step-ref passed">20</div>
+<div class="step-cell passed">* def SchemaUtils = Java.type('utils.SchemaUtils')</div>
+</div>
+<div class="time-cell passed">5</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="21">
+<div class="step-ref passed">21</div>
+<div class="step-cell passed">* assert SchemaUtils.isValid(jsonData, expectedOutput)</div>
+</div>
+<div class="time-cell passed">434</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="22">
+<div class="step-ref passed">22</div>
+<div class="step-cell passed">* print SchemaUtils.isValid(jsonData, expectedOutput)</div>
+</div>
+<div class="time-cell passed">19</div>
+</div>
+<div class="preformatted" data-parent="22">00:21:02.090 [print] true</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## Verifying json response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="23">
+<div class="step-ref passed">23</div>
+<div class="step-cell passed">* def location = response.location</div>
+</div>
+<div class="time-cell passed">6</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="24">
+<div class="step-ref passed">24</div>
+<div class="step-cell passed">* print 'Response is: ', location</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="preformatted" data-parent="24">00:21:02.090 [print] Response is:  {
+  "localtime": "2021-08-27 14:47",
+  "utc_offset": "-4.0",
+  "country": "United States of America",
+  "localtime_epoch": 1630075620,
+  "name": "New York",
+  "timezone_id": "America/New_York",
+  "lon": "-74.006",
+  "region": "New York",
+  "lat": "40.714"
+}</div>
+<div class="step-row">
+<div class="step-container" id="25">
+<div class="step-ref passed">25</div>
+<div class="step-cell passed">* def weatherIcons = response.current.weather_icons</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="26">
+<div class="step-ref passed">26</div>
+<div class="step-cell passed">* print 'Response is: ', weatherIcons</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="26">00:21:02.106 [print] Response is:  [
+  "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+]</div>
+<div class="step-row">
+<div class="step-container" id="27">
+<div class="step-ref passed">27</div>
+<div class="step-cell passed">* def weatherDesc = response.current.weather_descriptions</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="28">
+<div class="step-ref passed">28</div>
+<div class="step-cell passed">* print 'Response is: ', weatherDesc</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="28">00:21:02.106 [print] Response is:  [
+  "Sunny"
+]</div>
+<div class="step-row">
+<div class="step-container" id="29">
+<div class="step-ref passed">29</div>
+<div class="step-cell passed">And match response.current.weather_icons != null</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="30">
+<div class="step-ref passed">30</div>
+<div class="step-cell passed">And match response.current.weather_descriptions != null</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="31">
+<div class="step-ref passed">31</div>
+<div class="step-cell passed">And match response.location != null</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="32">
+<div class="step-ref passed">32</div>
+<div class="step-cell passed">And match response.location.name == 'New York'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="33">
+<div class="step-ref passed">33</div>
+<div class="step-cell passed">And match response.location.country == 'United States of America'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="34">
+<div class="step-ref passed">34</div>
+<div class="step-cell passed">And match response.location.timezone_id == 'America/New_York'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[2:56]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [2:56]</span><span class="scenario-name">Invoking "Historical Weather" API and Verify error info from the json response </span>
+</div>
+<div class="scenario-time passed">ms: 544</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[2:56]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="35">
+<div class="step-ref bg-step">35</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="35">00:21:01.838 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="36">
+<div class="step-ref bg-step">36</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="37">
+<div class="step-ref bg-step">37</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="38">
+<div class="step-ref bg-step">38</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="39">
+<div class="step-ref bg-step">39</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="40">
+<div class="step-ref bg-step">40</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[2:56]bg">
+<div class="step-container" id="41">
+<div class="step-ref bg-step">41</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## My current plan doesn't support to invoke this API and fetch relevant details, Hence verifying only error message from response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="42">
+<div class="step-ref passed">42</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="43">
+<div class="step-ref passed">43</div>
+<div class="step-cell passed">And path historicalWeather</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="44">
+<div class="step-ref passed">44</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="45">
+<div class="step-ref passed">45</div>
+<div class="step-cell passed">And param query = 'New York'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="46">
+<div class="step-ref passed">46</div>
+<div class="step-cell passed">And param historical_date = '2015-01-21'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="47">
+<div class="step-ref passed">47</div>
+<div class="step-cell passed">And param hourly = '1'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="48">
+<div class="step-ref passed">48</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="49">
+<div class="step-ref passed">49</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">532</div>
+</div>
+<div class="preformatted" data-parent="49">00:21:01.854 request:
+1 &gt; GET http://api.weatherstack.com/historical?access_key=75954876168d81ceb685be99a415e565&amp;query=New+York&amp;historical_date=2015-01-21&amp;hourly=1
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:02.372 response time in milliseconds: 529.53
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d2a09251da1-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:02 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=u3VJv%2FhvV5guMk2va3D7U1%2FdNKRNu1x%2FxRriewNrw%2BK3%2Fc6pj1MhlRyxzysFfIIONL2YL%2FCyUVvge9GUuE1fssIGgziKbJAxKI1t3dpt%2FAlC16bQc2vFBiYA7NBaTZ%2BJK1Bkvdhjaw%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: 8e085f84-c1c7-4758-a0d6-b85a6dceef44
+1 &lt; x-request-time: 0.008
+{
+  "success": false,
+  "error": {
+    "code": 603,
+    "type": "historical_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="50">
+<div class="step-ref passed">50</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="51">
+<div class="step-ref passed">51</div>
+<div class="step-cell passed">* def res = response</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="52">
+<div class="step-ref passed">52</div>
+<div class="step-cell passed">* print 'Response is: ', res</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="52">00:21:02.372 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 603,
+    "type": "historical_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## verifying response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="53">
+<div class="step-ref passed">53</div>
+<div class="step-cell passed">And match response.error.code == 603</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="54">
+<div class="step-ref passed">54</div>
+<div class="step-cell passed">And match response.error.type == 'historical_queries_not_supported_on_plan'</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="55">
+<div class="step-ref passed">55</div>
+<div class="step-cell passed">And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[3:76]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [3:76]</span><span class="scenario-name">Invoking "Historical Time-Series" API and Verify error info from the json response </span>
+</div>
+<div class="scenario-time passed">ms: 493</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[3:76]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="56">
+<div class="step-ref bg-step">56</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="56">00:21:02.106 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="57">
+<div class="step-ref bg-step">57</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="58">
+<div class="step-ref bg-step">58</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="59">
+<div class="step-ref bg-step">59</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="60">
+<div class="step-ref bg-step">60</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="61">
+<div class="step-ref bg-step">61</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[3:76]bg">
+<div class="step-container" id="62">
+<div class="step-ref bg-step">62</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## My current plan doesn't support to invoke this API and fetch relevant details, Hence verifying only error message from response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="63">
+<div class="step-ref passed">63</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="64">
+<div class="step-ref passed">64</div>
+<div class="step-cell passed">And path historicalWeather</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="65">
+<div class="step-ref passed">65</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="66">
+<div class="step-ref passed">66</div>
+<div class="step-cell passed">And param query = 'New York'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="67">
+<div class="step-ref passed">67</div>
+<div class="step-cell passed">And param historical_date_start = '2015-01-21'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="68">
+<div class="step-ref passed">68</div>
+<div class="step-cell passed">And param historical_date_end = '2015-01-25'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="69">
+<div class="step-ref passed">69</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="70">
+<div class="step-ref passed">70</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">488</div>
+</div>
+<div class="preformatted" data-parent="70">00:21:02.122 request:
+1 &gt; GET http://api.weatherstack.com/historical?access_key=75954876168d81ceb685be99a415e565&amp;query=New+York&amp;historical_date_start=2015-01-21&amp;historical_date_end=2015-01-25
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:02.606 response time in milliseconds: 485.07
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d2bbba41da1-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:02 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=WzDDQaZ1gj6JQmeNSVHEddlYfJdy6%2FrpYHyfb99vPWqTbdbilr%2Bdmkcgp%2FfLaUrlqM807JMFZjj1B3mwlgfzVCouZyuazTmlIJ9D9E1QakpmgxHexSZspbjQFFGl1GMKioWLuFm4PQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: 69565a8e-a358-4cbd-a8b3-1b7a73955510
+1 &lt; x-request-time: 0.008
+{
+  "success": false,
+  "error": {
+    "code": 603,
+    "type": "historical_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="71">
+<div class="step-ref passed">71</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="72">
+<div class="step-ref passed">72</div>
+<div class="step-cell passed">* def res = response</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="73">
+<div class="step-ref passed">73</div>
+<div class="step-cell passed">* print 'Response is: ', res</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="preformatted" data-parent="73">00:21:02.606 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 603,
+    "type": "historical_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## Verifying response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="74">
+<div class="step-ref passed">74</div>
+<div class="step-cell passed">And match response.error.code == 603</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="75">
+<div class="step-ref passed">75</div>
+<div class="step-cell passed">And match response.error.type == 'historical_queries_not_supported_on_plan'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="76">
+<div class="step-ref passed">76</div>
+<div class="step-cell passed">And match response.error.info == 'Your current subscription plan does not support historical weather data. Please upgrade your account to use this feature.'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[4:97]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [4:97]</span><span class="scenario-name">Invoking "Weather Forecast" API and Verify error info from the json response </span>
+</div>
+<div class="scenario-time passed">ms: 522</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[4:97]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="77">
+<div class="step-ref bg-step">77</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="77">00:21:02.387 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="78">
+<div class="step-ref bg-step">78</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="79">
+<div class="step-ref bg-step">79</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="80">
+<div class="step-ref bg-step">80</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="81">
+<div class="step-ref bg-step">81</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="82">
+<div class="step-ref bg-step">82</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[4:97]bg">
+<div class="step-container" id="83">
+<div class="step-ref bg-step">83</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## My current plan doesn't support to invoke this API and fetch relevant details, Hence verifying only error message from response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="84">
+<div class="step-ref passed">84</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="85">
+<div class="step-ref passed">85</div>
+<div class="step-cell passed">And path weatherForecast</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="86">
+<div class="step-ref passed">86</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="87">
+<div class="step-ref passed">87</div>
+<div class="step-cell passed">And param query = 'New York'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="88">
+<div class="step-ref passed">88</div>
+<div class="step-cell passed">And param forecast_days = '1'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="89">
+<div class="step-ref passed">89</div>
+<div class="step-cell passed">And param hourly = '1'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="90">
+<div class="step-ref passed">90</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="91">
+<div class="step-ref passed">91</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">515</div>
+</div>
+<div class="preformatted" data-parent="91">00:21:02.387 request:
+1 &gt; GET http://api.weatherstack.com/forecast?access_key=75954876168d81ceb685be99a415e565&amp;query=New+York&amp;forecast_days=1&amp;hourly=1
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:02.914 response time in milliseconds: 512.67
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d2d78791d2d-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:03 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=xZ74SbxZvJz1%2Bi1ggYNZZ6oIIXsFAHF8bAA178FjhGWsbP7akZ1BD5n2sQlMpU70jj2O5aqIpCBVzwGXf6EtXdYO8pxU5P6hGHw5Ml3ivDUeNJiAgZHNb7DK%2BQcSfvO5N495NPtlZg%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: d1233e75-3fd7-4cb5-be1c-455fde713665
+1 &lt; x-request-time: 0.007
+{
+  "success": false,
+  "error": {
+    "code": 609,
+    "type": "forecast_days_not_supported_on_plan",
+    "info": "Your current subscription plan does not support weather forecast data. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="92">
+<div class="step-ref passed">92</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## Verifying response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="93">
+<div class="step-ref passed">93</div>
+<div class="step-cell passed">And match response.error.code == 609</div>
+</div>
+<div class="time-cell passed">3</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="94">
+<div class="step-ref passed">94</div>
+<div class="step-cell passed">And match response.error.type == 'forecast_days_not_supported_on_plan'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="95">
+<div class="step-ref passed">95</div>
+<div class="step-cell passed">And match response.error.info == 'Your current subscription plan does not support weather forecast data. Please upgrade your account to use this feature.'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[5:116]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [5:116]</span><span class="scenario-name">Invoking "Location Lookup/Autocomplete" API and Verify error info from json response </span>
+</div>
+<div class="scenario-time passed">ms: 501</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[5:116]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="96">
+<div class="step-ref bg-step">96</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="96">00:21:02.622 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="97">
+<div class="step-ref bg-step">97</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="98">
+<div class="step-ref bg-step">98</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="99">
+<div class="step-ref bg-step">99</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="100">
+<div class="step-ref bg-step">100</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="101">
+<div class="step-ref bg-step">101</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[5:116]bg">
+<div class="step-container" id="102">
+<div class="step-ref bg-step">102</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## My current plan doesn't support to invoke this API and fetch relevant details, Hence verifying only error message from response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="103">
+<div class="step-ref passed">103</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="104">
+<div class="step-ref passed">104</div>
+<div class="step-cell passed">And path locationLookup</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="105">
+<div class="step-ref passed">105</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="106">
+<div class="step-ref passed">106</div>
+<div class="step-cell passed">And param query = 'london'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="107">
+<div class="step-ref passed">107</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="108">
+<div class="step-ref passed">108</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">496</div>
+</div>
+<div class="preformatted" data-parent="108">00:21:02.622 request:
+1 &gt; GET http://api.weatherstack.com/autocomplete?access_key=75954876168d81ceb685be99a415e565&amp;query=london
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:03.124 response time in milliseconds: 494.17
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d2eee5f1e08-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:03 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kEWyJpEK5zeEQo%2BsTLM%2FU%2FoWBe5FN%2BXLReFY2qfj8sp833CyE46N%2FkZkFok0xY2nmy0jz7clAMqL7E2Lyf3sIk7zY%2FKzJGF42eaZ1mcQC7xj8Uw%2F8U%2F62izl%2B6dbVMQZzx4NYyblrQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: b90701b0-14d7-4307-814c-81b110ad0a29
+1 &lt; x-request-time: 0.009
+{
+  "success": false,
+  "error": {
+    "code": 105,
+    "type": "function_access_restricted",
+    "info": "Access Restricted - Your current Subscription Plan does not support this API Function."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="109">
+<div class="step-ref passed">109</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="110">
+<div class="step-ref passed">110</div>
+<div class="step-cell passed">* def res = response</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="111">
+<div class="step-ref passed">111</div>
+<div class="step-cell passed">* print 'Response is: ', res</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="111">00:21:03.125 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 105,
+    "type": "function_access_restricted",
+    "info": "Access Restricted - Your current Subscription Plan does not support this API Function."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="112">
+<div class="step-ref passed">112</div>
+<div class="step-cell passed">And match response.error.info == 'Access Restricted - Your current Subscription Plan does not support this API Function.'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[6:132]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [6:132]</span><span class="scenario-name">Invoking "Single Location" API and Verify weather_descriptions info shouldn't be null value </span>
+</div>
+<div class="scenario-time passed">ms: 706</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[6:132]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="113">
+<div class="step-ref bg-step">113</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="113">00:21:02.926 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="114">
+<div class="step-ref bg-step">114</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="115">
+<div class="step-ref bg-step">115</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="116">
+<div class="step-ref bg-step">116</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="117">
+<div class="step-ref bg-step">117</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="118">
+<div class="step-ref bg-step">118</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[6:132]bg">
+<div class="step-container" id="119">
+<div class="step-ref bg-step">119</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="120">
+<div class="step-ref passed">120</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="121">
+<div class="step-ref passed">121</div>
+<div class="step-cell passed">And path currentWeather</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="122">
+<div class="step-ref passed">122</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="123">
+<div class="step-ref passed">123</div>
+<div class="step-cell passed">And param query = 'London, United Kingdom'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="124">
+<div class="step-ref passed">124</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="125">
+<div class="step-ref passed">125</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">701</div>
+</div>
+<div class="preformatted" data-parent="125">00:21:02.932 request:
+1 &gt; GET http://api.weatherstack.com/current?access_key=75954876168d81ceb685be99a415e565&amp;query=London%2C+United+Kingdom
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:03.631 response time in milliseconds: 698.32
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d30cee51da5-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:03 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=xKv1LiTbkz1UsfNHWXXo%2BgSGOQBk%2BEgywvmbKaX%2FBz8S9TkiRhn2x4PHXflKLOstKSn0mnXk6s%2FAPc0vmMRFxGxW%2FJgcLmijs61dGsWu8Jqo0eYCJA4Z08fglsOIOBzcLYfUmPLuYQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: a8e7e5eb-9574-448b-9706-14929668d8da
+1 &lt; x-request-time: 0.192
+{
+  "request": {
+    "type": "City",
+    "query": "London, United Kingdom",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "London",
+    "country": "United Kingdom",
+    "region": "City of London, Greater London",
+    "lat": "51.517",
+    "lon": "-0.106",
+    "timezone_id": "Europe/London",
+    "localtime": "2021-08-27 19:51",
+    "localtime_epoch": 1630093860,
+    "utc_offset": "1.0"
+  },
+  "current": {
+    "observation_time": "06:51 PM",
+    "temperature": 18,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+    ],
+    "weather_descriptions": [
+      "Sunny"
+    ],
+    "wind_speed": 17,
+    "wind_degree": 350,
+    "wind_dir": "N",
+    "pressure": 1024,
+    "precip": 0,
+    "humidity": 64,
+    "cloudcover": 0,
+    "feelslike": 18,
+    "uv_index": 4,
+    "visibility": 10,
+    "is_day": "yes"
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="126">
+<div class="step-ref passed">126</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="127">
+<div class="step-ref passed">127</div>
+<div class="step-cell passed">* def location = response.location</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="128">
+<div class="step-ref passed">128</div>
+<div class="step-cell passed">* print 'Response is: ', location</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="128">00:21:03.632 [print] Response is:  {
+  "localtime": "2021-08-27 19:51",
+  "utc_offset": "1.0",
+  "country": "United Kingdom",
+  "localtime_epoch": 1630093860,
+  "name": "London",
+  "timezone_id": "Europe/London",
+  "lon": "-0.106",
+  "region": "City of London, Greater London",
+  "lat": "51.517"
+}</div>
+<div class="step-row">
+<div class="step-container" id="129">
+<div class="step-ref passed">129</div>
+<div class="step-cell passed">* def weatherIcons = response.current.weather_icons</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="130">
+<div class="step-ref passed">130</div>
+<div class="step-cell passed">* print 'Response is: ', weatherIcons</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="130">00:21:03.633 [print] Response is:  [
+  "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+]</div>
+<div class="step-row">
+<div class="step-container" id="131">
+<div class="step-ref passed">131</div>
+<div class="step-cell passed">* def weatherDesc = response.current.weather_descriptions</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="132">
+<div class="step-ref passed">132</div>
+<div class="step-cell passed">* print 'Response is: ', weatherDesc</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="132">00:21:03.633 [print] Response is:  [
+  "Sunny"
+]</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## Verifying json response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="133">
+<div class="step-ref passed">133</div>
+<div class="step-cell passed">And match response.current.weather_icons != null</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="134">
+<div class="step-ref passed">134</div>
+<div class="step-cell passed">And match response.current.weather_descriptions != null</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="135">
+<div class="step-ref passed">135</div>
+<div class="step-cell passed">And match response.location != null</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+</div>
+<div class="scenario">
+<div class="scenario-heading" id="[7:154]">
+<div class="heading-container">
+<div class="scenario-tags">
+<a class="badge badge-primary" href="karate-tags.html">smoke</a>
+</div>
+<span class="scenario-keyword">Scenario: [7:154]</span><span class="scenario-name">Invoking "Multiple Locations" API and Verify the error info from the json response </span>
+</div>
+<div class="scenario-time passed">ms: 510</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="[7:154]bg">
+<div class="step-ref bg-step">&gt;&gt;</div>
+<div class="step-cell passed">Background:</div>
+</div>
+<div class="time-cell passed"></div>
+</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="136">
+<div class="step-ref bg-step">136</div>
+<div class="step-cell passed">* configure logPrettyResponse = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="preformatted" data-parent="136">00:21:03.131 karate.env system property was: TEST</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="137">
+<div class="step-ref bg-step">137</div>
+<div class="step-cell passed">* configure logPrettyRequest = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="138">
+<div class="step-ref bg-step">138</div>
+<div class="step-cell passed">* configure ssl = true</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="139">
+<div class="step-ref bg-step">139</div>
+<div class="step-cell passed">* def currentWeather = '/current'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="140">
+<div class="step-ref bg-step">140</div>
+<div class="step-cell passed">* def historicalWeather = '/historical'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="141">
+<div class="step-ref bg-step">141</div>
+<div class="step-cell passed">* def weatherForecast = '/forecast'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row" data-parent="[7:154]bg">
+<div class="step-container" id="142">
+<div class="step-ref bg-step">142</div>
+<div class="step-cell passed">* def locationLookup = '/autocomplete'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## My current plan doesn't support to invoke this API and fetch relevant details, Hence verifying only error message from response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="143">
+<div class="step-ref passed">143</div>
+<div class="step-cell passed">Given url WeatherURL</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="144">
+<div class="step-ref passed">144</div>
+<div class="step-cell passed">And path currentWeather</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="145">
+<div class="step-ref passed">145</div>
+<div class="step-cell passed">And param access_key = access_key</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="146">
+<div class="step-ref passed">146</div>
+<div class="step-cell passed">And param query = 'London;Singapur;Shanghai'</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="147">
+<div class="step-ref passed">147</div>
+<div class="step-cell passed">And header Accept = 'application/json'</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="148">
+<div class="step-ref passed">148</div>
+<div class="step-cell passed">When method GET</div>
+</div>
+<div class="time-cell passed">501</div>
+</div>
+<div class="preformatted" data-parent="148">00:21:03.136 request:
+1 &gt; GET http://api.weatherstack.com/current?access_key=75954876168d81ceb685be99a415e565&amp;query=London%3BSingapur%3BShanghai
+1 &gt; Accept: application/json
+1 &gt; Accept-Encoding: gzip,deflate
+1 &gt; Connection: Keep-Alive
+1 &gt; Host: api.weatherstack.com
+1 &gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_261)
+
+00:21:03.637 response time in milliseconds: 499.10
+1 &lt; 200
+1 &lt; Alt-Svc: h3=":443"; ma=86400
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 68577d320e4b1d2d-BLR
+1 &lt; Connection: keep-alive
+1 &lt; Content-Type: application/json; Charset=UTF-8
+1 &lt; Date: Fri, 27 Aug 2021 18:51:03 GMT
+1 &lt; NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+1 &lt; Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=gPbTm2l93mQ5AbZpl6wBzT5kBrm4MJJ6zU7QN%2FrTocjzpnG65PQfPoKfqtvPyy4SKHKh%2F%2FqbdoYQU4mQ4j8iyth1SL9eG32UOO%2B4h3DcUd%2BKojFjKD1iMAjwOmeCpHw4IfTWYBe42A%3D%3D"}],"group":"cf-nel","max_age":604800}
+1 &lt; Server: cloudflare
+1 &lt; Transfer-Encoding: chunked
+1 &lt; access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+1 &lt; access-control-allow-origin: *
+1 &lt; x-apilayer-transaction-id: b3f4e86c-3974-48a2-859a-ee0fc545e5f2
+1 &lt; x-request-time: 0.007
+{
+  "success": false,
+  "error": {
+    "code": 604,
+    "type": "bulk_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support bulk queries. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container" id="149">
+<div class="step-ref passed">149</div>
+<div class="step-cell passed">Then status 200</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="150">
+<div class="step-ref passed">150</div>
+<div class="step-cell passed">* def res = response</div>
+</div>
+<div class="time-cell passed">0</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="151">
+<div class="step-ref passed">151</div>
+<div class="step-cell passed">* print 'Response is: ', res</div>
+</div>
+<div class="time-cell passed">1</div>
+</div>
+<div class="preformatted" data-parent="151">00:21:03.638 [print] Response is:  {
+  "success": false,
+  "error": {
+    "code": 604,
+    "type": "bulk_queries_not_supported_on_plan",
+    "info": "Your current subscription plan does not support bulk queries. Please upgrade your account to use this feature."
+  }
+}</div>
+<div class="step-row">
+<div class="step-container">
+<div class="step-ref passed"></div>
+<div class="step-cell comment">## Verifying response</div>
+</div>
+<div class="time-cell comment"></div>
+</div>
+<div class="step-row">
+<div class="step-container" id="152">
+<div class="step-ref passed">152</div>
+<div class="step-cell passed">And match response.error.code == 604</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="153">
+<div class="step-ref passed">153</div>
+<div class="step-cell passed">And match response.error.type == 'bulk_queries_not_supported_on_plan'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+<div class="step-row">
+<div class="step-container" id="154">
+<div class="step-ref passed">154</div>
+<div class="step-cell passed">And match response.error.info == 'Your current subscription plan does not support bulk queries. Please upgrade your account to use this feature.'</div>
+</div>
+<div class="time-cell passed">2</div>
+</div>
+</div>
+</div>
+    
+</div>   
+  
+</body>
+
+</html>
